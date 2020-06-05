@@ -93,8 +93,8 @@ if gstatus then
 	status.Text = "found game! (" .. index .. ")"
 	wait(1)
 	status.Text = "executing script"
-	loadstring(httpGet(scr))()
 	ScreenGui:Destroy()
+	loadstring(httpGet(scr))()
 else
 	status.Text = index
 	wait(1)
