@@ -96,4 +96,8 @@ if status then
 	status.Text = "executing script"
 	loadstring(httpGet(scr))()
 	ScreenGui:Destroy()
+else
+	status.Text = index
+	wait(1)
+	ScreenGui:Destroy()
 end
