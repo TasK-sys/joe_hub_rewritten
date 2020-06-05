@@ -89,8 +89,8 @@ local function search_For_Game()
 	end
 end
 
-local index, status, scr = search_For_Game()
-if status then
+local index, gstatus, scr = search_For_Game()
+if gstatus then
 	status.Text = "found game! (" .. index .. ")"
 	wait(1)
 	status.Text = "executing script"
