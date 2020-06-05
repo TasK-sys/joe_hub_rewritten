@@ -83,10 +83,9 @@ local function search_For_Game()
 	for i, v in pairs(decoded) do
 		if v.script and v.gameid == game.GameId then
 			return i, true, v.script
-		else
-			return "no game found", false, nil
 		end
 	end
+	return "no game found", false, nil
 end
 
 local index, gstatus, scr = search_For_Game()
