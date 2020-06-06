@@ -1,2 +1,2 @@
 # joe hub rewritten
-currently in progress <3
+cool epic script hub for lego game roblox
