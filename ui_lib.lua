@@ -296,7 +296,7 @@ function library:Window(name)
         Title.BackgroundTransparency = 1.000
         Title.Size = UDim2.new(0, 180, 0, 30)
         Title.Font = Enum.Font.Gotham
-        Title.Text = "  Box"
+        Title.Text = "  " .. name
         Title.TextColor3 = Color3.fromRGB(255, 255, 255)
         Title.TextSize = 16.000
         Title.TextXAlignment = Enum.TextXAlignment.Left
