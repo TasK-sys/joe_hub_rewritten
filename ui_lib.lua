@@ -272,7 +272,8 @@ function library:Window(name)
         end
         reSize()
     end
-    function window:Box(default, callback)
+    function window:Box(name, default, callback)
+	local name = name or "Box"
 	local callback = typeof(default) == "function" and default or callback
 	local default = (callback and typeof(default) ~= "function") and default or "value"
 
