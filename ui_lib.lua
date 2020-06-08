@@ -338,6 +338,7 @@ function library:Window(name)
                 focused = false
                 callback(tostring(TextBox.Text))
                 TextBox.Text = ""
+		TextBox.PlaceholderText = TextBox.Text
             end
         end)
 
