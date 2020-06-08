@@ -270,6 +270,76 @@ function library:Window(name)
         end
         reSize()
     end
+    function window:Box(default, callback)
+        local callback = typeof(default) == "function" and default or callback
+        local default = typeof(default) ~= "function" and default or "value"
+
+        local Box = Instance.new("Frame")
+        local Title = Instance.new("TextLabel")
+        local Main = Instance.new("ImageLabel")
+        local TextBox = Instance.new("TextBox")
+
+        --Properties:
+
+        Box.Name = "Box"
+        Box.Parent = Container
+        Box.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Box.BackgroundTransparency = 1.000
+        Box.Size = UDim2.new(0, 180, 0, 30)
+
+        Title.Name = "Title"
+        Title.Parent = Box
+        Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Title.BackgroundTransparency = 1.000
+        Title.Size = UDim2.new(0, 180, 0, 30)
+        Title.Font = Enum.Font.Gotham
+        Title.Text = "  Box"
+        Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Title.TextSize = 16.000
+        Title.TextXAlignment = Enum.TextXAlignment.Left
+
+        Main.Name = "Main"
+        Main.Parent = Box
+        Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Main.BackgroundTransparency = 1.000
+        Main.ClipsDescendants = true
+        Main.Position = UDim2.new(0.538888872, 0, 0.13333334, 0)
+        Main.Size = UDim2.new(0, 77, 0, 22)
+        Main.Image = "rbxassetid://3570695787"
+        Main.ImageColor3 = Color3.fromRGB(39, 39, 39)
+        Main.ScaleType = Enum.ScaleType.Slice
+        Main.SliceCenter = Rect.new(100, 100, 100, 100)
+        Main.SliceScale = 0.02
+
+        TextBox.Parent = Main
+        TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TextBox.BackgroundTransparency = 1.000
+        TextBox.Position = UDim2.new(0.0909090936, 0, 0, 0)
+        TextBox.Size = UDim2.new(0, 70, 0, 22)
+        TextBox.Font = Enum.Font.Gotham
+        TextBox.PlaceholderColor3 = Color3.fromRGB(225, 225, 225)
+        TextBox.PlaceholderText = default
+        TextBox.Text = ""
+        TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextBox.TextSize = 14.000
+        TextBox.TextXAlignment = Enum.TextXAlignment.Left
+
+        local focused = false
+
+        TextBox.Focused:connect(function()
+            focused = true
+        end)
+
+        TextBox.FocusLost:connect(function()
+            if focused then
+                focused = false
+                callback(tostring(TextBox.Text))
+                TextBox.Text = ""
+            end
+        end)
+
+        reSize()
+    end
     reSize()
     return window
 end
