@@ -32,6 +32,8 @@ function library:Window(name)
     Frame.ScaleType = Enum.ScaleType.Slice
     Frame.SliceCenter = Rect.new(100, 100, 100, 100)
     Frame.SliceScale = 0.06
+    Frame.Active = true
+    Frame.Draggable = true
 
     UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(29, 29, 29)), ColorSequenceKeypoint.new(1, Color3.fromRGB(66, 66, 66))}
     UIGradient.Rotation = 45
