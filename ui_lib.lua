@@ -273,8 +273,8 @@ function library:Window(name)
         reSize()
     end
     function window:Box(default, callback)
-        local callback = typeof(default) == "function" and default or callback
-        local default = typeof(default) ~= "function" and default or "value"
+	local callback = typeof(default) == "function" and default or callback
+	local default = (callback and typeof(default) ~= "function") and default or "value"
 
         local Box = Instance.new("Frame")
         local Title = Instance.new("TextLabel")
