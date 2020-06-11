@@ -337,8 +337,8 @@ function library:Window(name)
             if focused then
                 focused = false
                 callback(tostring(TextBox.Text))
+		TextBox.PlaceholderText.Text = TextBox.Text
                 TextBox.Text = ""
-		TextBox.PlaceholderText = TextBox.Text
             end
         end)
 
