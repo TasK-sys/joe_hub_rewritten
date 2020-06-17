@@ -31,7 +31,7 @@ title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 title.BackgroundTransparency = 1.000
 title.Size = UDim2.new(0, 300, 0, 32)
 title.Font = Enum.Font.Gotham
-title.Text = "joe hub (re-written)"
+title.Text = "joe hub (discontinued)"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextSize = 22.000
 
@@ -91,6 +91,9 @@ end
 local index, gstatus, scr = search_For_Game()
 if gstatus then
 	status.Text = "found game! (" .. index .. ")"
+	wait(1)
+	status.Text = "notice about discontinuation copied to your clipboard"
+	setclipboard(tostring(httpGet("https://www.yeethosting.pro/notice.txt")))
 	wait(1)
 	status.Text = "executing script"
 	ScreenGui:Destroy()
